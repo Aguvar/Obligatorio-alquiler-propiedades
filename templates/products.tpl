@@ -34,7 +34,7 @@
    </head>
    <body>
       <!--header-->
-      <?php include "header.html"; ?>
+      {include "header.tpl"}
       <!-- products -->
       <!-- grow -->
       <div class="grow">
@@ -282,8 +282,7 @@
          </div>
       </div>
       <!-- products -->
-      <?php
-         include "footer.html";
-         ?>
+      <!-- footer -->
+      {include "footer.tpl"}
    </body>
 </html>

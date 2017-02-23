@@ -1,4 +1,4 @@
-<!--<div class="header">
+<div class="header">
 		<div class="container">
 			<div class="head-top">
 				<div class="logo">
@@ -16,4 +16,4 @@
 				<div class="clearfix"> </div>
 		</div>
 		</div>
-</div>-->
+</div>

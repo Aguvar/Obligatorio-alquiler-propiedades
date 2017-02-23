@@ -1,32 +1,32 @@
-<!--
+
 <!DOCTYPE html>
 <html>
    <head>
       <title>MercadoLibre pero para tu kasa</title>
       <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-       jQuery (necessary for Bootstrap's JavaScript plugins) 
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="js/jquery.min.js"></script>
-       Custom Theme files 
-      theme-style
+      <!-- Custom Theme files -->
+      <!--theme-style-->
       <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-      //theme-style
+      <!--//theme-style-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="keywords" content="Casas" />
       <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-      fonts
+      <!--fonts-->
       <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
       <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-      //fonts
-       start menu 
+      <!--//fonts-->
+      <!-- start menu -->
       <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
       <script type="text/javascript" src="js/memenu.js"></script>
       <script>          $(document).ready(function () { $(".memenu").memenu(); });</script>
       <script src="js/simpleCart.min.js"> </script>
    </head>
    <body>
-      header
-      
+      <!--header-->
+      {include "header.tpl"}
       <div class="banner">
          <div class="container">
             <script src="js/responsiveslides.min.js"></script>
@@ -65,7 +65,7 @@
             </div>
          </div>
       </div>
-      content
+      <!--content-->
       <div class="container">
          <div class="cont">
             <div class="content">
@@ -181,44 +181,10 @@
                   </div>
                </div>
             </div>
-            -
+            <!----->
          </div>
-         
+         <!---->
       </div>
-      	
+      {include "footer.tpl"}		
    </body>
-</html>-->
-
-
-<?php
-
-include_once 'include/smarty/libs/Smarty.class.php';
-//require_once 'include/class.Conexion.BD.php';
-require_once 'config.php';
-
-$mySmart = new Smarty();
-
-$mySmart->template_dir = 'templates';
-$mySmart->compile_dir = 'templates_c';
-
-
-//$conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
-//
-//if ($conn) {
-//    $conn->conectar();
-//    
-//    $sql = 'SELECT barrio_id, precio, titulo FROM propiedades';
-//    $sql .= ' WHERE eliminado != 0';
-//    
-//
-//    if ($conn->consulta($sql)) {
-//        echo 'consulta ok';
-//    } else {
-//        echo 'consulta not ok';
-//    }
-//} else {
-//    echo 'Not ok';
-//}
-
-$mySmart->display('templates/index.tpl');
-?>
+</html>

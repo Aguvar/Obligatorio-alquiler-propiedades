@@ -1,4 +1,4 @@
-<!--<div class="footer w3layouts">
+<div class="footer w3layouts">
 		<div class="container">
 			<div class="footer-top-at w3">		
 				
@@ -22,4 +22,4 @@
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-</div>-->
+</div>
