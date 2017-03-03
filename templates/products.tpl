@@ -94,219 +94,219 @@
                     {/for}
                 </div>
                 {*<div class="col-md-12 product1">
-                    <div class=" bottom-product">
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi3.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi1.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi3.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi1.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class=" bottom-product">
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi5.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi5.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class=" bottom-product">
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi5.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi5.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-md-3 bottom-cd simpleCart_shelfItem">
-                            <div class="product-at ">
-                                <a href="single.php">
-                                    <img class="img-responsive" src="images/pi.jpg" alt="">
-                                    <div class="pro-grid">
-                                        <span class="buy-in">Buy Now</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-                            <div class="ca-rt">
-                                <a href="#" class="item_add">
-                                    <p class="number item_price"><i> </i>$500.00</p>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
+                <div class=" bottom-product">
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi3.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi1.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi3.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi1.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"> </div>
+                </div>
+                <div class=" bottom-product">
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi5.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi5.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"> </div>
+                </div>
+                <div class=" bottom-product">
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi5.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi5.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3 bottom-cd simpleCart_shelfItem">
+                <div class="product-at ">
+                <a href="single.php">
+                <img class="img-responsive" src="images/pi.jpg" alt="">
+                <div class="pro-grid">
+                <span class="buy-in">Buy Now</span>
+                </div>
+                </a>
+                </div>
+                <p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+                <div class="ca-rt">
+                <a href="#" class="item_add">
+                <p class="number item_price"><i> </i>$500.00</p>
+                </a>
+                </div>
+                <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"> </div>
+                </div>
                 </div>*}
                 <div class="clearfix"></div>
             </div>

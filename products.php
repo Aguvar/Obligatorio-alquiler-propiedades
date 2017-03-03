@@ -17,6 +17,8 @@ $conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 if ($conn) {
     $conn->conectar();
 
+    echo $conn->ultimoError();
+    
     $sql = 'SELECT barrios.nombre AS barrio, propiedades.precio, propiedades.titulo, propiedades.id
             FROM propiedades
             INNER JOIN barrios ON barrios.id = propiedades.barrio_id
@@ -27,13 +29,17 @@ if ($conn) {
 
     $parametros = array();
 
-    if ($conn->consulta($sql)) {
+    
+    
+    if ($conn->consulta($sql,$parametros)) {
+        
         
 //        print_r($conn->restantesRegistros());
         $mySmart->assign('casas', $conn->restantesRegistros());
         
     } else {
         echo 'consulta not ok';
+        
     }
 } else {
     echo 'Not ok';
