@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mattress A Ecommerce Category Flat Bootstrap Responsive Website Template | Login :: w3layouts</title>
+        <title>Estadisticas</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
@@ -29,54 +29,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         {literal}
             <script>$(document).ready(function () {
                     $(".memenu").memenu();
-                });</script>
-            <script src="js/simpleCart.min.js"></script>
-        {/literal}
+                }
+                );</script>
+            {/literal}
+        <script src="js/simpleCart.min.js"></script>
+        <script src="js/imagezoom.js"></script>
     </head>
     <body>
         <!--header-->
-        {include "header.tpl"}
+        {include 'header.tpl'}
         <!-- grow -->
         <div class="grow">
             <div class="container">
-                <h2>Login</h2>
+                <h2>Estadisticas</h2>
             </div>
         </div>
         <!-- grow -->
-        <!--content-->
-        <div class="container">
-            <div class="account">
-                <div class="account-pass">
-                    <div class="col-md-8 account-top">
-                        <form action="procesoLogin.php" method="post">
-
-                            <div> 	
-                                <span>Usuario</span>
-                                <input type="text" name="user"> 
-                            </div>
-                            <div> 
-                                <span >Contraseña</span>
-                                <input type="password" name="pass">
-                            </div>	
-                            <div>{$errMsg}</div>
-                            <input type="submit" value="Login"> 
-                        </form>
-                    </div>
-                    <div class="col-md-4 left-account ">
-                        <a href="single.html"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
-                        <div class="five">
-                            <h2>25% </h2><span>discount</span>
-                        </div>
-                        <a href="register.html" class="create">Create an account</a>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-
-        </div>
-
+        
         <!--//content-->
-        {include "footer.tpl"}
+        {include 'footer.tpl'}
     </body>
 </html>

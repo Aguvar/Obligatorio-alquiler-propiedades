@@ -6,41 +6,47 @@ require_once 'include/class.Conexion.BD.php';
 $user = $_POST["user"];
 $pass = $_POST["pass"];
 
-echo $user;
-echo $pass;
 
-$conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
+$conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD, true);
 
 if ($conn && $user != "" && $pass != "") {
     $conn->conectar();
 
 
-    $sql = "SELECT  usuario, clave FROM usuarios WHERE usuario = ':userHere'";
+    $sql = "SELECT  usuario, clave FROM usuarios WHERE usuario = :userHere";
 
     $parametros = array(
-        array('userHere', $user, 'string', 30)
+        array('userHere', $user, 'string', 0)
     );
+
+
 
     if ($conn->consulta($sql, $parametros)) {
 
-        $credenciales = $conn->siguienteRegistro();
+        $credenciales = $conn->restantesRegistros();
+        $conn->desconectar();
 
+        //print_r($credenciales);
         array_filter($credenciales);
-        
-        if (!empty($credenciales) && $credenciales["clave"] === $pass) {
+
+        if (!empty($credenciales) && $credenciales[0]["clave"] === $pass) {
             //Iniciar sesion
             echo 'inicio de sesion correcto';
+            header("Location: private.php");
         } else {
             //Mandarlo al login con un mensaje de error
-            echo 'La clave no esta bien';
+            header("Location: login.php?err=1");
+            exit();
         }
     } else {
         //Mandarlo al login con un mensaje de error
-        echo 'El usuario no existe';
+        header("Location: login.php?err=1");
+        exit();
     }
 } else {
     //Mandarlo al login con un mensaje de error
-    echo 'Directamente no anduvo o no pusiste nada guacho';
+    header("Location: login.php?err=1");
+    exit();
 }
 ?>
 
