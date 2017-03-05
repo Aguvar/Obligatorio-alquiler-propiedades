@@ -31,8 +31,9 @@ if ($conn && $user != "" && $pass != "") {
 
         if (!empty($credenciales) && $credenciales[0]["clave"] === $pass) {
             //Iniciar sesion
-            echo 'inicio de sesion correcto';
+            setcookie("loggedUser", $user, time() + 1800, "/");
             header("Location: private.php");
+            exit();
         } else {
             //Mandarlo al login con un mensaje de error
             header("Location: login.php?err=1");
