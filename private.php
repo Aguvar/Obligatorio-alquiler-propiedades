@@ -15,7 +15,15 @@ $privateSmarty = new Smarty();
 $privateSmarty->template_dir = 'templates';
 $privateSmarty->compile_dir = 'templates_c';
 
-$privateSmarty->assign("nombre", $_COOKIE["loggedUser"]);
+if (isset($_COOKIE["loggedUser"])) {
+    $log = true;
+    $name = $_COOKIE["loggedUser"];
+    $privateSmarty->assign("nombre", $name);
+} else {
+    $log = false;
+}
+
+$privateSmarty->assign("log", $log);
 
 $privateSmarty->display("private.tpl");
 

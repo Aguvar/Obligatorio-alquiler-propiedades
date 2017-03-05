@@ -37,7 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </head>
     <body>
         <!--header-->
-        {include 'header.tpl'}
+        {include 'chooseHeader.tpl'}
         <!-- grow -->
         <div class="grow">
             <div class="container">

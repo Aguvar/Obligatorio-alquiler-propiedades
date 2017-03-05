@@ -27,7 +27,7 @@
     </head>
     <body>
         <!--header-->
-        {include "header.tpl"}
+        {include "chooseHeader.tpl"}
         <!-- grow -->
         <div class="grow">
             <div class="container">

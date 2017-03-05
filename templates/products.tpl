@@ -29,7 +29,7 @@
     </head>
     <body>
         <!--header-->
-        {include "header.tpl"}
+        {include "chooseHeader.tpl"}
         <!-- products -->
         <!-- grow -->
         <div class="grow">
