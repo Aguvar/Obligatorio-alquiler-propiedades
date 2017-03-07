@@ -110,9 +110,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <p>{$info.0.texto}</p>
                                 <p>Viene con {$info.0.habitaciones} {if $info.0.habitaciones == 1} habitacion {else} habitaciones{/if} y {$info.0.banios} {if $info.0.banios == 1} baño {else} baños{/if}</p>
 
-                                <p>Precio por metro cuadrado: <!-- magia php -->	</p>	
-                                <p>Precio por metro cuadrado de propiedades en el mismo barrio: <!-- magia php -->	</p>
-                                <p>Te gozate, esta mas barato ke el promedio! (o no) <!-- magia php -->	</p>
+                                <p>Precio por metro cuadrado: ${$promedioCasa} / m<sup>2</sup>	</p>	
+                                <p>Precio por metro cuadrado de propiedades en el mismo barrio: ${$promedioBarrio} / m<sup>2</sup>	</p>
+                                <p>
+                                    {if $promedioCasa < $promedioBarrio}
+                                        Esta casa es mas barata que propiedades similares en el mismo barrio.
+                                    {else}
+                                        Esta casa es mas cara que propiedades similares en el mismo barrio.
+                                    {/if}
+                                </p>
                                 <a href="#" class="add-cart item_add">EXPORTAR A PDF</a>
 
                             </div>
@@ -123,7 +129,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                     <div class="col-md-12 contact-in">
                         <div class="address-more">
-                            <h4>Preguntas acerca de la propiedad</h4>	<a href="#" class="add-cart item_add">PREGUNTAR</a>
+                            <h4>Preguntas acerca de la propiedad</h4>	
+                            <form action="procesoPregunta.php" method="POST">
+                                <a href="#" class="add-cart item_add">PREGUNTAR</a>
+                                <input type="text" value="Realice su pregunta" name="txtPregunta">
+                                <input type="submit" value="Enviar">
+                                <input type="hidden" name="idCasa" value="{$idCasa}">
+                            </form>
+                            <br>
                             <p>Es a prueba de balas? <h5>Respuesta:</h5> Se</p> <br>
                             <p>Ke pasa si la quemo? <h5>Respuesta:</h5> Se quema</p> <br>
                             <p>Hola te ofrezco $1500 es todo lo que tengo, saludos. <h5>Respuesta:</h5> El precio es U$S 150.000</p>
