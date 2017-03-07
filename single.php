@@ -27,7 +27,7 @@ $conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 if ($conn) {
     $conn->conectar();
 
-    $sql = 'SELECT barrios.nombre AS barrio, propiedades.precio, propiedades.titulo, propiedades.mts2, propiedades.habitaciones, propiedades.banios, propiedades.garage, propiedades.texto
+    $sql = 'SELECT barrios.nombre AS barrio, propiedades.precio, propiedades.titulo, propiedades.mts2, propiedades.habitaciones, propiedades.banios, propiedades.garage, propiedades.texto, propiedades.barrio_id
             FROM propiedades
             INNER JOIN barrios ON barrios.id = propiedades.barrio_id
             WHERE propiedades.id = :idCasa';
@@ -42,7 +42,7 @@ if ($conn) {
 
         $mts = $infoCasa[0]["mts2"];
         $precio = $infoCasa[0]["precio"];
-        $barrio = $infoCasa[0]["barrio"];
+        $barrio = $infoCasa[0]["barrio_id"];
 
         $mySmart->assign('info', $infoCasa);
     } else {
@@ -52,7 +52,7 @@ if ($conn) {
     //Precio/mts2
     $promedioCasa = $precio / $mts;
 
-    $mySmart->assign("promedioCasa", $promedioCasa);
+    $mySmart->assign("promedioCasa", (int)$promedioCasa);
 
     $sql = "SELECT AVG(precio)/AVG(mts2) AS promedio FROM `propiedades` WHERE precio != 0 AND barrio_id = :idBarrio";
 
@@ -62,7 +62,10 @@ if ($conn) {
 
     if ($conn->consulta($sql, $parametros)) {
     
-        print_r($conn->restantesRegistros());
+        $promedioBarrio = $conn->siguienteRegistro();
+        
+        $mySmart->assign("promedioBarrio", (int)$promedioBarrio);
+        
         
     } else {
         echo 'consulta not ok';
@@ -70,6 +73,8 @@ if ($conn) {
 } else {
     echo 'Not ok';
 }
+
+$mySmart->assign("idCasa", $idCasa);
 
 $mySmart->display('templates/single.tpl');
 ?>

@@ -1,1 +1,10 @@
 https://docs.google.com/document/d/1NQKScBZRHD04Nw1deOMuBVuzxN_r54JBAIMZ_pFW-VM/edit
+
+Venta o alquiler (Radio) (Obligatorio)
+Ciudad (Dropdown) (Obligatorio)
+Barrio (Dropdown)
+Casa o apartamento (Radio)
+Cant Habitaciones (Filltext)
+Precio desde (Filltext)
+Precio hasta (Filltext)
+Garage (Radio)
