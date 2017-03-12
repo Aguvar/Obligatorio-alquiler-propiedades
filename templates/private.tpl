@@ -44,8 +44,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h2>Bienvenido, {$nombre}</h2>
             </div>
         </div>
-        <!-- grow -->
-        
+
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#administracion">Administrar propiedades</a></li>
+                <li><a data-toggle="tab" href="#preguntas">Responder preguntas</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="administracion" class="tab-pane fade in active">
+                    <h3>MANTENIMIENTO DE PROPIEDADES</h3>
+                    <p>Aka tas pa hacer cosas re chetas como permitir definir nuevas propiedades, editar existentes propiedades (todos sus datos) o dar de baja (si, las propiedades wacho).</p>
+                </div>
+                <div id="preguntas" class="tab-pane fade">
+                    <h3>PREGUNTAS PENDIENTES</h3>
+                    <p>Usted responder preguntas que estar aqui.</p>
+                </div>
+            </div>    
+        </div>     
+
         <!--//content-->
         {include 'footer.tpl'}
     </body>
