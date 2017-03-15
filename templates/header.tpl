@@ -8,7 +8,7 @@
 				<ul class="memenu skyblue">
 					<li><a class="color8" href="products.php">Catálogo</a></li>
 					<li><a class="color8" href="estadisticas.php">Estadísticas</a></li>				      
-					<li><a class="color6" href="contact.php">Contact</a></li>
+					<li><a class="color6" href="contact.php">Contacto</a></li>
 					<li><a class="color4" href="login.php">Login</a></li>				
 			  </ul> 
 			</div>

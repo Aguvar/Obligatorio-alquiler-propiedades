@@ -7,7 +7,7 @@ $user = $_POST["user"];
 $pass = $_POST["pass"];
 
 
-$conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD, true);
+$conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 
 if ($conn && $user != "" && $pass != "") {
     $conn->conectar();
