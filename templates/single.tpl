@@ -125,23 +125,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!---->
-
+                                
                     <div class="col-md-12 contact-in">
                         <div class="address-more">
-                            <h4>Preguntas acerca de la propiedad</h4>	
-                            <form action="procesoPregunta.php" method="POST">
-                                <a href="#" class="add-cart item_add">PREGUNTAR</a>
-                                <input type="text" value="Realice su pregunta" name="txtPregunta">
-                                <input type="submit" value="Enviar">
-                                <input type="hidden" name="idCasa" value="{$idCasa}">
-                            </form>
+                            <h4>Preguntas acerca de la propiedad</h4>	                           
                             <br>
                             <p>Es a prueba de balas? <h5>Respuesta:</h5> Se</p> <br>
                             <p>Ke pasa si la quemo? <h5>Respuesta:</h5> Se quema</p> <br>
                             <p>Hola te ofrezco $1500 es todo lo que tengo, saludos. <h5>Respuesta:</h5> El precio es U$S 150.000</p>
-                        </div>			
+                        </div>
+                        <form action="procesoPregunta.php" method="POST">
+                            <a href="#" class="add-cart item_add">PREGUNTAR</a>
+                            <input type="text" placeholder="Realice su pregunta" name="txtPregunta">
+                            <input type="submit" value="Enviar">
+                            <input type="hidden" name="idCasa" value="{$idCasa}">
+                        </form>
                     </div>
+
 
                     <div class="clearfix"> </div>
                     <div class=" bottom-product">

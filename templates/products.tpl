@@ -37,39 +37,70 @@
                 <h2><span>Products</span></h2>                
             </div>
         </div>
-        <ul class="nav nav-pills">
-            <li class="active"><a href="#">Venta</a></li>
-            <li class="active"><a href="#">Alquiler</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ciudad
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Cualquiera</a></li>
-                    <li><a href="#">Monteivdeo</a></li>
-                    <li><a href="#">Ciudad de la Costa</a></li>
-                    <li><a href="#">Punta del Este</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Barrio
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <!-- Agregar en base a ciudad seleccionada-->
-                    <li><a href="#">Cualquiera</a></li>
-                    <li><a href="#">Pocitos</a></li>
-                    <li><a href="#">Malvin</a></li>
-                    <li><a href="#">Punta Carretas</a></li>
-                    <li><a href="#">Buceo</a></li>
-                </ul>
-            </li>
-            <li class="active"><a href="#">Casa</a></li>
-            <li class="active"><a href="#">Apartamento</a></li>
-            <input type="text" class="form-control col-lg-2" placeholder="Nro de habitaciones">
-            <input type="text" class="form-control col-lg-2" placeholder="Precio mínimo">
-            <input type="text" class="form-control col-lg-2" placeholder="Precio máximo">
-            <li class="active"><a href="#">Con Garage</a></li>
-        </ul>
-        <!-- grow -->
+        
+        <div class="container" id="filterPanel">
+            <div class="row">
+                <!--<div id="filter-panel" class="collapse filter-panel">-->
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form class="form-inline" role="form">
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Operación:</label>
+                                <select id="pref-perpage" class="form-control">
+                                    <option selected="selected" value="10">Venta</option>
+                                    <option value="15">Alquiler</option>
+                                    <option value="20">Ambas</option>
+                                </select>                                
+                            </div> 
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Ciudad:</label>
+                                <select id="pref-perpage" class="form-control">
+                                    <option selected="selected" value="10">Cualquiera</option>
+                                    <option value="15">Montevideo</option>
+                                    <option value="20">Ciudad de la Costa</option>
+                                    <option value="20">Punta del Este</option>
+                                </select>                                
+                            </div> 
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Barrio:</label>
+                                <select id="pref-perpage" class="form-control">
+                                    <option selected="selected" value="10">Cualquiera</option>
+                                    <option value="15">Hay muchos</option>
+                                    <option value="20">Dependen de la ciudad</option>
+                                    <option value="20">Harambe</option>
+                                </select>                                
+                            </div> 
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Propiedad:</label>
+                                <select id="pref-perpage" class="form-control">
+                                    <option selected="selected" value="10">Casa</option>
+                                    <option value="15">Apartamento</option>
+                                    <option value="20">Ambos</option>
+                                </select>                                
+                            </div> 
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-search">Habitaciones:</label>
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="#">
+                            </div> 
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-search">Precio minimo:</label>
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$0">
+                            </div> 
+                            <div class="form-group" id="filterForm">
+                                <label class="filter-col" style="margin-right:0;" for="pref-search">Precio máximo:</label>
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$8.500.000">
+                            </div> 
+                            <div class="form-group" id="filterForm">                                    
+                                <button type="submit" class="btn btn-default filter-col">
+                                    Buscar
+                                </button>  
+                            </div>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="pro-du">
             <div class="container">
                 <div class="col-md-12 product1">
