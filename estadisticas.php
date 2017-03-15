@@ -17,12 +17,29 @@ if (isset($_COOKIE["loggedUser"])) {
     $log = false;
 }
 
+//Obtener valores de busqueda por un GET
+if (isset($_GET["ciudad"]) && isset($_GET["operacion"])) {
+    
+}
+
 $mySmart->assign("log", $log);
 
 $conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
-$conn->conectar();
+if ($conn->conectar()) {
+    
+    $sql = "SELECT nombres FROM ciudades";
+    
+    if ($conn->consulta($sql)) {
+        
+        $mySmart->assign("ciudades", $conn->restantesRegistros());
+        
+    }
+}
+
+
 
 //Logica para las estadisticas
+
 
 $mySmart->display("estadisticas.tpl");
 ?>

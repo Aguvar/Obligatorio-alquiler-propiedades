@@ -4,7 +4,7 @@ require_once './config.php';
 require_once './include/smarty/libs/Smarty.class.php';
 require_once './include/class.Conexion.BD.php';
 
-$conn = new ConexionBD('sql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
+$conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 
 if (!isset($_COOKIE["loggedUser"])) {
     header("Location: index.php");
@@ -15,7 +15,7 @@ if ($conn) {
     $conn->conectar();
     
     //Consultar por las casas sin un orden especifico
-    $sql = "SELECT `operacion`, `barrio_id`, `precio`, `titulo` FROM `propiedades` WHERE eliminado = 0 LIMIT 0,30";
+    $sql = "SELECT operacion, barrio_id, precio, titulo FROM propiedades WHERE eliminado = 0 LIMIT 0,30";
     
     if ($conn->consulta($sql)) {
         
