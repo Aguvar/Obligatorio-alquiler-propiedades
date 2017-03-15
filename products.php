@@ -28,7 +28,7 @@ if ($conn) {
 
     echo $conn->ultimoError();
     
-    $sql = 'SELECT barrios.nombre AS barrio, propiedades.precio, propiedades.titulo, propiedades.id
+    $sql = 'SELECT barrios.nombre AS barrio, propiedades.precio, propiedades.titulo, propiedades.id, propiedades.portada
             FROM propiedades
             INNER JOIN barrios ON barrios.id = propiedades.barrio_id
             WHERE propiedades.precio >0
