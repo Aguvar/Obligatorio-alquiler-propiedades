@@ -9,32 +9,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <head>
         <title>Panel de control</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
-        <!-- Custom Theme files -->
-        <!--theme-style-->
-        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-        <!--//theme-style-->
+        <script src="js/private.js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/private.css" rel="stylesheet" type="text/css" media="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
               Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-        <!--fonts-->
         <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
-        <!-- start menu -->
         <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
-        <script type="text/javascript" src="js/memenu.js"></script>
+        <script type="text/javascript" src="js/memenu.js"></script>        
         {literal}
             <script>$(document).ready(function () {
                     $(".memenu").memenu();
                 }
                 );</script>
-            {/literal}
+            {/literal}        
         <script src="js/simpleCart.min.js"></script>
         <script src="js/imagezoom.js"></script>
     </head>
+    
     <body>
         <!--header-->
         {include 'chooseHeader.tpl'}
@@ -44,24 +41,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h2>Bienvenido, {$nombre}</h2>
             </div>
         </div>
+        <!-- grow -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Administracion')" id="defaultOpen">Administracion de Propiedades</button>
+            <button class="tablinks" onclick="openTab(event, 'Preguntas')">Preguntas de interesados</button>
+            
+            <script>
+                document.getElementById("defaultOpen").click();
+            </script>
+        </div>
 
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#administracion">Administrar propiedades</a></li>
-                <li><a data-toggle="tab" href="#preguntas">Responder preguntas</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="administracion" class="tab-pane fade in active">
-                    <h3>MANTENIMIENTO DE PROPIEDADES</h3>
-                    <p>Aka tas pa hacer cosas re chetas como permitir definir nuevas propiedades, editar existentes propiedades (todos sus datos) o dar de baja (si, las propiedades wacho).</p>
-                </div>
-                <div id="preguntas" class="tab-pane fade">
-                    <h3>PREGUNTAS PENDIENTES</h3>
-                    <p>Usted responder preguntas que estar aqui.</p>
-                </div>
-            </div>    
-        </div>     
+        <div id="Administracion" class="tabcontent">
+            <h3>London</h3>
+            <p>London es un pueblo al norte de la Antartida.</p>
+        </div>
 
+        <div id="Preguntas" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris queda lejos de Hawayy y queda lejos de africa y queda lejos de Australia y queda cerca de Portugal y Holanda.</p> 
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
         <!--//content-->
         {include 'footer.tpl'}
     </body>

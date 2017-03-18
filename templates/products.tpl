@@ -8,7 +8,6 @@
         <!-- Custom Theme files -->
         <!--theme-style-->
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/filter.css" rel="stylesheet" type="text/css" media="all" />
         <!--//theme-style-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,7 +37,7 @@
                 <h2><span>Products</span></h2>                
             </div>
         </div>
-
+        
         <div class="container" id="filterPanel">
             <div class="row">
                 <!--<div id="filter-panel" class="collapse filter-panel">-->
@@ -89,57 +88,19 @@
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-search">Precio máximo:</label>
-                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$1.500.000">
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$8.500.000">
                             </div> 
                             <div class="form-group" id="filterForm">                                    
                                 <button type="submit" class="btn btn-default filter-col">
                                     Buscar
                                 </button>  
-                            </div>
-                            
+                            </div>                            
                         </form>
                     </div>
                 </div>
-            </div>    
-            <!--</div>-->
+            </div>
         </div>
-
-        <!--
-        <ul class="nav nav-pills">
-            <li class="active"><a href="#">Venta</a></li>
-            <li class="active"><a href="#">Alquiler</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ciudad
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Cualquiera</a></li>
-                    <li><a href="#">Monteivdeo</a></li>
-                    <li><a href="#">Ciudad de la Costa</a></li>
-                    <li><a href="#">Punta del Este</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Barrio
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-        <!-- Agregar en base a ciudad seleccionada->
-        <li><a href="#">Cualquiera</a></li>
-        <li><a href="#">Pocitos</a></li>
-        <li><a href="#">Malvin</a></li>
-        <li><a href="#">Punta Carretas</a></li>
-        <li><a href="#">Buceo</a></li>
-    </ul>
-</li>
-<li class="active"><a href="#">Casa</a></li>
-<li class="active"><a href="#">Apartamento</a></li>
-<input type="text" class="form-control col-lg-2" placeholder="Nro de habitaciones">
-<input type="text" class="form-control col-lg-2" placeholder="Precio mínimo">
-<input type="text" class="form-control col-lg-2" placeholder="Precio máximo">
-<li class="active"><a href="#">Con Garage</a></li>
-</ul>
-
-        -->
-        <!-- grow -->
+        
         <div class="pro-du">
             <div class="container">
                 <div class="col-md-12 product1">
@@ -152,7 +113,7 @@
                                         <a href="single.php?id={$casas.$numCasa.id}">
                                             <img class="img-responsive" src="images/pi3.jpg" alt="">
                                             <div class="pro-grid">
-                                                <span class="buy-in">Más info</span>
+                                                <span class="buy-in">Buy Now</span>
                                             </div>
                                         </a>
                                     </div>
