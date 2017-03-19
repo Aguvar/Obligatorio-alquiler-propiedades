@@ -1,8 +1,7 @@
 <?php
 
-include_once 'include/smarty/libs/Smarty.class.php';
-//require_once 'include/class.Conexion.BD.php';
-require_once 'config.php';
+require_once './config.php';
+require_once './include/smarty/libs/Smarty.class.php';
 
 $mySmart = new Smarty();
 
@@ -19,6 +18,6 @@ if (isset($_COOKIE["loggedUser"])) {
 
 $mySmart->assign("log", $log);
 
-
-$mySmart->display('templates/index.tpl');
+$mySmart->display("formularioPropiedad.tpl");
 ?>
+

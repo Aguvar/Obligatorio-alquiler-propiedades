@@ -13,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <script src="js/private.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/private.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/dataTablesBootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -31,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <script src="js/simpleCart.min.js"></script>
         <script src="js/imagezoom.js"></script>
     </head>
-    
+
     <body>
         <!--header-->
         {include 'chooseHeader.tpl'}
@@ -44,26 +45,76 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- grow -->
         <div class="tab">
             <button class="tablinks" onclick="openTab(event, 'Administracion')" id="defaultOpen">Administracion de Propiedades</button>
-            <button class="tablinks" onclick="openTab(event, 'Preguntas')">Preguntas de interesados</button>
-            
+            <button class="tablinks" onclick="openTab(event, 'Preguntas')">Preguntas pendientes</button>
+
             <script>
                 document.getElementById("defaultOpen").click();
             </script>
         </div>
 
         <div id="Administracion" class="tabcontent">
-            <h3>London</h3>
-            <p>London es un pueblo al norte de la Antartida.</p>
+            <br>
+            <div>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Tipo</th>
+                        <th>Operación</th>
+                        <th>Ciudad</th>
+                        <th>Barrio</th>
+                        <th>Precio</th>
+                        <th>Metros cuadrados</th>
+                        <th>Número de habitaciones</th>
+                        <th>Número de baños</th>
+                        <th>Garage</th>
+                        <th>Opciones</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Casa</td>
+                        <td>Venta</td>
+                        <td>Montevideo</td>
+                        <td>Carrasco</td>
+                        <td>U$S 2.500.000</td>
+                        <td>500 mts<sup>2</sup></td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>Sí</td>
+                        <td>
+                            <button class="button" onclick="location.href='formularioPropiedad.php';" style="vertical-align:middle"><span>Editar </span>
+                            <button class="button" style="vertical-align:middle"><span>Eliminar </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="Preguntas" class="tabcontent">
+            <br>
+            <div>
+                <table>
+                    <tr>
+                        <th>#</th>     
+                        <th>Propiedad</th>                   
+                        <th>Pregunta</th>
+                        <th>Opciones</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Castillo Pitamiglio </td>
+                        <td>Ta fachero? </td>
+                        <td>
+                            <button class="button" onclick="location.href='single.php';" style="vertical-align:middle"><span>Ver propiedad </span>
+                            <br><button class="button" style="vertical-align:middle"><span>Responder </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <div id="Preguntas" class="tabcontent">
             <h3>Paris</h3>
             <p>Paris queda lejos de Hawayy y queda lejos de africa y queda lejos de Australia y queda cerca de Portugal y Holanda.</p> 
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
         </div>
         <!--//content-->
         {include 'footer.tpl'}

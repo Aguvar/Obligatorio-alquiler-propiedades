@@ -27,14 +27,12 @@
         <script src="js/imagezoom.js"></script>
     </head>
     <body>
-        {include 'chooseHeader.tpl'}
-        
+        {include 'chooseHeader.tpl'}        
         <div class="grow">
             <div class="container">
                 <h2>Estadisticas</h2>
             </div>
-        </div>
-        
+        </div>        
         <div class="container" id="filterPanel">
             <div class="row">
                 <!--<div id="filter-panel" class="collapse filter-panel">-->
@@ -56,6 +54,7 @@
                                     <option selected="selected" value="any">Cualquiera</option>
                                     <option value="V">Venta</option>
                                     <option value="A">Alquiler</option>
+
                                 </select>                                
                             </div>
                             <div class="form-group" id="filterForm">                                    
@@ -68,7 +67,7 @@
                 </div>
             </div>    
         </div>
-
+ 
         <div>
             <table>
                 <tr>

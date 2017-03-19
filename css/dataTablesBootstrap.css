@@ -1,0 +1,32 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+    align: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    vertical-align: center;
+}
+
+tr:nth-child(even) {
+    width: 80%;
+    background-color: #dddddd;
+    text-align: left;
+    vertical-align: center;
+}
+
+.tabcontent button{
+    width: 130px;
+}
+
+#Preguntas{
+    width: 65%;
+    margin: auto;
+    align: center;
+    border-color: #000\9;
+}

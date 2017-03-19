@@ -6,6 +6,7 @@ require_once './include/class.Conexion.BD.php';
 
 $conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 
+
 if (!isset($_COOKIE["loggedUser"])) {
     header("Location: index.php");
     exit();
@@ -16,10 +17,10 @@ if ($conn) {
     
     //Consultar por las casas sin un orden especifico
     $sql = "SELECT operacion, barrio_id, precio, titulo FROM propiedades WHERE eliminado = 0 LIMIT 0,30";
-    
+ 
     if ($conn->consulta($sql)) {
         
-        $datosCasas = $conn->restantesRegistros();
+        $datosCasas = $conn->restantesRegistros();        
         
     } else {
         echo 'error de consulta';    

@@ -76,6 +76,7 @@ INSERT INTO `ciudades` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+
 -- Table structure for table `imagenes`
 --
 
