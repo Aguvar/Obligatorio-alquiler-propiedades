@@ -111,7 +111,7 @@
                                 <div class="col-md-3 bottom-cd simpleCart_shelfItem">
                                     <div class="product-at ">
                                         <a href="single.php?id={$casas.$numCasa.id}">
-                                            <img class="img-responsive" src="images/{$casas.$numCasa.portada}" alt="">
+                                            <img class="img-responsive" src="images/pi3.jpg" alt="">
                                             <div class="pro-grid">
                                                 <span class="buy-in">Buy Now</span>
                                             </div>

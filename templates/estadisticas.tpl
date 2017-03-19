@@ -40,22 +40,22 @@
                 <!--<div id="filter-panel" class="collapse filter-panel">-->
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-inline" action="estadisticas.php" method="GET" role="form">
+                        <form class="form-inline" role="form">
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Ciudad:</label>
-                                <select id="pref-perpage" class="form-control" name="ciudad">
-                                    <option selected="selected" value="any">Cualquiera</option>
-                                    <option value="Montevideo">Montevideo</option>
-                                    <option value="Ciudad de la costa">Ciudad de la Costa</option>
-                                    <option value="Punta del Este">Punta del Este</option>
+                                <select id="pref-perpage" class="form-control">
+                                    <option selected="selected" value="10">Cualquiera</option>
+                                    <option value="15">Montevideo</option>
+                                    <option value="20">Ciudad de la Costa</option>
+                                    <option value="20">Punta del Este</option>
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Tipo de Operación:</label>
-                                <select id="pref-perpage" class="form-control" name="operacion">
-                                    <option selected="selected" value="any">Cualquiera</option>
-                                    <option value="V">Venta</option>
-                                    <option value="A">Alquiler</option>
+                                <select id="pref-perpage" class="form-control">
+                                    <option selected="selected" value="10">Cualquiera</option>
+                                    <option value="15">Venta</option>
+                                    <option value="20">Alquiler</option>
                                 </select>                                
                             </div>
                             <div class="form-group" id="filterForm">                                    
