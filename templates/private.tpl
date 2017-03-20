@@ -52,13 +52,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
 
         <div id="Administracion" class="tabcontent">
-            <h3>London</h3>
-            <p>London es un pueblo al norte de la Antartida.</p>
+            <div>
+            <table>
+                <tr>
+                    <th># Casa</th>
+                    <th>Titulo</th>
+                    <th>Operacion</th>
+                    <th>Precio</th>
+                    <th>Ver propiedad</th>
+                    <th>Eliminar propiedad</th>
+                </tr>
+                {foreach from=$datosCasas item=casa}
+                <tr>
+                    <td>{$casa.id}</td>
+                    <td>{$casa.titulo}</td>
+                    <td>{if $casa.operacion == "A"}Alquiler{else}Venta{/if}</td>
+                    <td>{$casa.precio}</td>
+                    <td>
+                        <a class="material-icons button edit" href="single.php?id={$casa.id}">Ver propiedad</i>
+                    </td>
+                    <td>Boton para eliminar</td>
+                </tr>
+                {/foreach}
+            </table>
+        </div>
         </div>
 
         <div id="Preguntas" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris queda lejos de Hawayy y queda lejos de africa y queda lejos de Australia y queda cerca de Portugal y Holanda.</p> 
+           <div>
+            <table>
+                <tr>
+                    <th># Propiedad</th>
+                    <th>Fecha</th>
+                    <th>Pregunta</th>
+                    <th>Respuesta</th>
+                    <th>Fecha respuesta</th>
+                    <th>Ver propiedad</th>
+                    <th>Responder pregunta</th>
+                </tr>
+                {foreach from=$preguntasSinResponder item=pregunta}
+                <tr>
+                    <td>{$pregunta.id_propiedad}</td>
+                    <td>{$pregunta.fecha}</td>
+                    <td>{$pregunta.texto}</td>
+                    <td>{$pregunta.respuesta}</td>
+                    <td>{$pregunta.fecha_respuesta}</td>
+                    <td>
+                        <a class="material-icons button edit" href="single.php?id={$pregunta.id_propiedad}">Ver propiedad asociada</i>
+                    </td>
+                    <td>Coso para responder aca</td>
+                </tr>
+                {/foreach}
+            </table>
+        </div>
         </div>
 
         <div id="Tokyo" class="tabcontent">

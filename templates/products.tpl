@@ -5,6 +5,8 @@
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="js/products.js"></script>
         <!-- Custom Theme files -->
         <!--theme-style-->
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -37,61 +39,62 @@
                 <h2><span>Products</span></h2>                
             </div>
         </div>
-        
+
         <div class="container" id="filterPanel">
             <div class="row">
                 <!--<div id="filter-panel" class="collapse filter-panel">-->
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-inline" role="form">
+                        <form class="form-inline" role="form" method="GET" action="products.php">
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Operación:</label>
-                                <select id="pref-perpage" class="form-control">
-                                    <option selected="selected" value="10">Venta</option>
-                                    <option value="15">Alquiler</option>
-                                    <option value="20">Ambas</option>
+                                <select id="pref-perpage" class="form-control" name="operacion">
+                                    <option selected="selected" value="V">Venta</option>
+                                    <option value="A">Alquiler</option>
+                                    <option value="any">Ambas</option>
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Ciudad:</label>
-                                <select id="pref-perpage" class="form-control">
-                                    <option selected="selected" value="10">Cualquiera</option>
-                                    <option value="15">Montevideo</option>
-                                    <option value="20">Ciudad de la Costa</option>
-                                    <option value="20">Punta del Este</option>
+                                <select id="pref-perpage" class="form-control" name="ciudad">
+                                    <option selected="selected" value="any">Cualquiera</option>
+                                    {foreach from=$ciudades item=ciudad}
+                                    <option value="{$ciudad.id}">{$ciudad.nombre}</option>
+                                    {/foreach}
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Barrio:</label>
-                                <select id="pref-perpage" class="form-control">
-                                    <option selected="selected" value="10">Cualquiera</option>
-                                    <option value="15">Hay muchos</option>
-                                    <option value="20">Dependen de la ciudad</option>
-                                    <option value="20">Harambe</option>
+                                <select id="pref-perpage" class="form-control" name="barrio">
+                                    <option selected="selected" value="any">Cualquiera</option>
+                                    {foreach from=$barrios item=barrio}
+                                        <option value="{$barrio.id}">{$barrio.nombre}</option>
+                                    {/foreach}                                   
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Propiedad:</label>
-                                <select id="pref-perpage" class="form-control">
-                                    <option selected="selected" value="10">Casa</option>
-                                    <option value="15">Apartamento</option>
-                                    <option value="20">Ambos</option>
+                                <select id="pref-perpage" class="form-control" name="tipo">
+                                    <option selected="selected" value="C">Casa</option>
+                                    <option value="A">Apartamento</option>
+                                    <option value="any">Ambos</option>
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-search">Habitaciones:</label>
-                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="#">
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="#" name="habitaciones">
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-search">Precio minimo:</label>
-                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$0">
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$0" name="pMin">
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-search">Precio máximo:</label>
-                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$8.500.000">
+                                <input type="text" class="form-control input-sm" id="pref-search" placeholder="$8.500.000" name="pMax">
                             </div> 
-                            <div class="form-group" id="filterForm">                                    
-                                <button type="submit" class="btn btn-default filter-col">
+                            <div class="form-group" id="filterForm"> 
+                                <input type="hidden" value="" name="search">
+                                <button type="submit" class="btn btn-default filter-col" id="filtrar">
                                     Buscar
                                 </button>  
                             </div>                            
@@ -100,7 +103,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="pro-du">
             <div class="container">
                 <div class="col-md-12 product1">
@@ -111,7 +114,7 @@
                                 <div class="col-md-3 bottom-cd simpleCart_shelfItem">
                                     <div class="product-at ">
                                         <a href="single.php?id={$casas.$numCasa.id}">
-                                            <img class="img-responsive" src="images/pi3.jpg" alt="">
+                                            <img class="img-responsive" src="images/{$casas.$numCasa.portada}" alt="">
                                             <div class="pro-grid">
                                                 <span class="buy-in">Buy Now</span>
                                             </div>
@@ -131,6 +134,11 @@
                     {/for}
                 </div>
                 <div class="clearfix"></div>
+                <div>
+                    <button class="btn btn-default filter-col" id="botonPagAnt" value="-1">Anterior</button>
+                    <input type="hidden" id="pagActual" value="0">
+                    <button class="btn btn-default filter-col" id="botonPagSig" value="+1">Siguiente</button>
+                </div>
             </div>
         </div>
         <!-- products -->
