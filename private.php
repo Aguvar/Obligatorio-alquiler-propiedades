@@ -15,7 +15,7 @@ if ($conn) {
     $conn->conectar();
     
     //Consultar por las casas sin un orden especifico
-    $sql = "SELECT id, operacion, barrio_id, precio, titulo FROM propiedades WHERE eliminado = 0 LIMIT 0,30";
+    $sql = "SELECT id, operacion, barrio_id, precio, titulo, mts2, habitaciones, banios, garage, tipo FROM propiedades WHERE eliminado = 0 LIMIT 0,100";
     
     if ($conn->consulta($sql)) {
         

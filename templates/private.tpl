@@ -13,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <script src="js/private.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/private.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/dataTablesBootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -31,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <script src="js/simpleCart.min.js"></script>
         <script src="js/imagezoom.js"></script>
     </head>
-    
+
     <body>
         <!--header-->
         {include 'chooseHeader.tpl'}
@@ -44,72 +45,75 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- grow -->
         <div class="tab">
             <button class="tablinks" onclick="openTab(event, 'Administracion')" id="defaultOpen">Administracion de Propiedades</button>
-            <button class="tablinks" onclick="openTab(event, 'Preguntas')">Preguntas de interesados</button>
-            
+            <button class="tablinks" onclick="openTab(event, 'Preguntas')">Preguntas pendientes</button>
+
             <script>
                 document.getElementById("defaultOpen").click();
             </script>
         </div>
 
         <div id="Administracion" class="tabcontent">
+            <br>
             <div>
-            <table>
-                <tr>
-                    <th># Casa</th>
-                    <th>Titulo</th>
-                    <th>Operacion</th>
-                    <th>Precio</th>
-                    <th>Ver propiedad</th>
-                    <th>Eliminar propiedad</th>
-                </tr>
-                {foreach from=$datosCasas item=casa}
-                <tr>
-                    <td>{$casa.id}</td>
-                    <td>{$casa.titulo}</td>
-                    <td>{if $casa.operacion == "A"}Alquiler{else}Venta{/if}</td>
-                    <td>{$casa.precio}</td>
-                    <td>
-                        <a class="material-icons button edit" href="single.php?id={$casa.id}">Ver propiedad</i>
-                    </td>
-                    <td>Boton para eliminar</td>
-                </tr>
-                {/foreach}
-            </table>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Tipo</th>
+                        <th>Operación</th>
+                        <th>Ciudad</th>
+                        <th>Barrio</th>
+                        <th>Precio</th>
+                        <th>Metros cuadrados</th>
+                        <th>Número de habitaciones</th>
+                        <th>Número de baños</th>
+                        <th>Garage</th>
+                        <th>Opciones</th>
+                    </tr>
+                    {foreach from=$datosCasas item=casa}                        
+                    <tr>
+                        <td>{$casa.id}</td>
+                        <td>{if $casa.tipo == "C"}Casa{else}Apartamento{/if}</td>
+                        <td>{if $casa.operacion == "A"}Alquiler{else}Venta{/if}</td>
+                        <td>Montevideo</td>
+                        <td>Carrasco</td>
+                        <td>{if $casa.operacion == "A"}$UY{else}$USD{/if} {$casa.precio}</td>
+                        <td>{$casa.mts2} mts<sup>2</sup></td>
+                        <td>{$casa.habitaciones}</td>
+                        <td>{$casa.banios}</td>
+                        <td>{if $casa.garage == 1}Si{else}No{/if}</td>
+                        <td>
+                            <button class="button" onclick="location.href='formularioPropiedad.php?id={$casa.id}';" style="vertical-align:middle"><span>Editar </span>
+                            <button class="button" style="vertical-align:middle"><span>Eliminar </span>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </table>
+            </div>
         </div>
-        </div>
-
+        
         <div id="Preguntas" class="tabcontent">
-           <div>
-            <table>
-                <tr>
-                    <th># Propiedad</th>
-                    <th>Fecha</th>
-                    <th>Pregunta</th>
-                    <th>Respuesta</th>
-                    <th>Fecha respuesta</th>
-                    <th>Ver propiedad</th>
-                    <th>Responder pregunta</th>
-                </tr>
-                {foreach from=$preguntasSinResponder item=pregunta}
-                <tr>
-                    <td>{$pregunta.id_propiedad}</td>
-                    <td>{$pregunta.fecha}</td>
-                    <td>{$pregunta.texto}</td>
-                    <td>{$pregunta.respuesta}</td>
-                    <td>{$pregunta.fecha_respuesta}</td>
-                    <td>
-                        <a class="material-icons button edit" href="single.php?id={$pregunta.id_propiedad}">Ver propiedad asociada</i>
-                    </td>
-                    <td>Coso para responder aca</td>
-                </tr>
-                {/foreach}
-            </table>
-        </div>
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
+            <br>
+            <div>
+                <table>
+                    <tr>
+                        <th>#ID Propiedad</th>     
+                        <th>Fecha</th>                   
+                        <th>Pregunta</th>
+                        <th>Opciones</th>
+                    </tr>
+                    {foreach from=$preguntasSinResponder item=pregunta}
+                    <tr>
+                        <td>{$pregunta.id_propiedad}</td>
+                        <td>{$pregunta.fecha}</td>
+                        <td>{$pregunta.texto}</td>
+                        <td>
+                            <button class="button" onclick="location.href='single.php?id={$pregunta.id_propiedad}';" style="vertical-align:middle"><span>Ver propiedad </span>
+                            <br><button class="button" style="vertical-align:middle"><span>Responder </span>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </table>
+            </div>
         </div>
         <!--//content-->
         {include 'footer.tpl'}
