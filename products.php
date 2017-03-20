@@ -25,9 +25,48 @@ if (isset($_GET["search"])) {
             $paramCiudad = "barrios.ciudad_id = '".$_GET["ciudad"]."'";
             break;
     }
+    switch ($_GET["barrio"]) {
+        case "any":
+            $paramBarrio = '1';
+            break;
+        default:
+            $paramBarrio = "propiedades.barrio_id = ".$_GET["barrio"];
+            break;
+    }
+    switch ($_GET["tipo"]) {
+        case "C":
+            $paramTipo = 'propiedades.tipo = "C"';
+            break;
+        case "A":
+            $paramTipo = "propiedades.tipo = 'A'";
+            break;
+        default:
+            $paramTipo = "1";
+            break;
+    }
+    if (is_numeric($_GET["habitaciones"])) {
+        $paramHabitaciones = "propiedades.habitaciones = ".$_GET["habitaciones"];
+    } else {
+        $paramHabitaciones = "1";
+    }
+    if (is_numeric($_GET["pMin"])) {
+        $paramPrecioMin = "propiedades.precio > ".$_GET["pMin"];
+    } else {
+        $paramPrecioMin = "1";
+    }
+    if (is_numeric($_GET["pMax"])) {
+        $paramPrecioMax = "propiedades.precio < ".$_GET["pMax"];
+    } else {
+        $paramPrecioMax = "1";
+    }
 } else {
     $paramOperacion = "1";
     $paramCiudad = "1";
+    $paramBarrio = "1";
+    $paramTipo = "1";
+    $paramHabitaciones = "1";
+    $paramPrecioMin = "1";
+    $paramPrecioMax = "1";
 }
 
 $mySmart = new Smarty();
@@ -55,11 +94,13 @@ if ($conn) {
     $sql = "SELECT barrios.nombre AS barrio, barrios.ciudad_id AS ciudad, propiedades.precio, propiedades.titulo, propiedades.id, propiedades.portada
             FROM propiedades
             INNER JOIN barrios ON barrios.id = propiedades.barrio_id
-            WHERE " . $paramOperacion . " AND " . $paramCiudad . "
+            WHERE " . $paramOperacion . " AND " . $paramCiudad . " AND " . $paramBarrio . " AND " . $paramTipo . " AND " . $paramHabitaciones . " AND " . $paramPrecioMin . " AND " . $paramPrecioMax . "
             AND propiedades.eliminado = 0
             ORDER BY propiedades.precio
             LIMIT 0 , 12";
     
+    $sqlQuery = $sql;
+    $mySmart->assign("sqlQuery", $sqlQuery);
     echo $sql;
     
     $parametros = array(

@@ -6,7 +6,7 @@ function inicializar(){
 }
 
 function cambiarPagina(){
-    alert("Hey");
+    //alert($("#actualQuery").val());
     $.ajax({
 		async:true,
 		type: "POST",
@@ -16,7 +16,7 @@ function cambiarPagina(){
 		error:enchufarError,		
 		timeout:4000,                      
 		url:"obtenerCasas.php",     		
-		data:"numero=" + $("#valor").val()
+		data:$("#actualQuery").val()
 	});
 }
 
@@ -25,7 +25,7 @@ function mostrarResultados(){
 }
 
 function enchufarError() {
-    
+    alert("Error de servidor");
 }
 
 

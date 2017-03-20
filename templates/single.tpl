@@ -119,7 +119,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         Esta casa es mas cara que propiedades similares en el mismo barrio.
                                     {/if}
                                 </p>
-                                <a href="#" class="add-cart item_add">EXPORTAR A PDF</a>
+                                <a href="exportPDF.php?id={$idCasa}" class="add-cart item_add">EXPORTAR A PDF</a>
 
                             </div>
                         </div>

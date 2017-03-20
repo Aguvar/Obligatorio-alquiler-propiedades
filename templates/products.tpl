@@ -49,9 +49,9 @@
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Operación:</label>
                                 <select id="pref-perpage" class="form-control" name="operacion">
-                                    <option selected="selected" value="V">Venta</option>
+                                    <option value="any" selected="selected">Ambas</option>
+                                    <option value="V">Venta</option>
                                     <option value="A">Alquiler</option>
-                                    <option value="any">Ambas</option>
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
@@ -75,9 +75,9 @@
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Propiedad:</label>
                                 <select id="pref-perpage" class="form-control" name="tipo">
-                                    <option selected="selected" value="C">Casa</option>
+                                    <option selected="selected" value="any">Ambos</option>
+                                    <option value="C">Casa</option>
                                     <option value="A">Apartamento</option>
-                                    <option value="any">Ambos</option>
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
@@ -136,7 +136,8 @@
                 <div class="clearfix"></div>
                 <div>
                     <button class="btn btn-default filter-col" id="botonPagAnt" value="-1">Anterior</button>
-                    <input type="hidden" id="pagActual" value="0">
+                    <input type="hidden" id="pagActual" value="0"><span>Pagina 1</span>
+                    <input type="hidden" id="actualQuery" value="{$sqlQuery}">
                     <button class="btn btn-default filter-col" id="botonPagSig" value="+1">Siguiente</button>
                 </div>
             </div>
