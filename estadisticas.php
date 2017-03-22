@@ -45,7 +45,7 @@ if ($conn->conectar()) {
                 break;
         }
 
-        $sql = 'SELECT COUNT(barrio_id) AS casas, barrios.nombre AS barrio, AVG(precio) / AVG(mts2) AS promedio, barrios.id FROM propiedades INNER JOIN barrios ON propiedades.barrio_id = barrios.id WHERE ' . $paramCiudad . ' AND ' . $paramOperacion . ' GROUP BY barrio_id';
+        $sql = 'SELECT COUNT(barrio_id) AS casas, barrios.nombre AS barrio, AVG(precio) / AVG(mts2) AS promedio, barrios.id FROM propiedades INNER JOIN barrios ON propiedades.barrio_id = barrios.id WHERE ' . $paramCiudad . ' AND ' . $paramOperacion . ' AND propiedades.precio > 0 GROUP BY barrio_id';
 
 
        /* $parametros = array(

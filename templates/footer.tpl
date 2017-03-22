@@ -3,13 +3,12 @@
 			<div class="footer-top-at w3">		
 				
 				<div class="col-md-3 amet-sed w3ls">
-					<h4>CATEGORIES</h4>
+					<h4>ACCESO RAPIDO</h4>
 					<ul class="nav-bottom">
-						<li><a href="#">Bed linen</a></li>
-						<li><a href="#">Cushions</a></li>
-						<li><a href="#">Duvets</a></li>
-						<li><a href="#">Pillows</a></li>
-						<li><a href="#">Protectors</a></li>	
+						<li><a href="index.php">Home</a></li>
+						<li><a href="products.php">Catalogo</a></li>
+						<li><a href="contact.php">Contacto</a></li>
+						<li><a href="login.php">Login</a></li>
 					</ul>
 					
 				</div>
@@ -17,7 +16,7 @@
 				<h4>CONTACTANOS</h4>
 					<p>Av. Cuareim</p>
 					<p>Esq. Mercedes</p>
-					<p>oficina :  +26061939 </p>
+					<p>Oficina:  +26061939 </p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

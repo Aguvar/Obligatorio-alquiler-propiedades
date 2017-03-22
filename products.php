@@ -101,7 +101,7 @@ if ($conn) {
     
     $sqlQuery = $sql;
     $mySmart->assign("sqlQuery", $sqlQuery);
-    echo $sql;
+    
     
     $parametros = array(
         array('operacion', $paramOperacion, 'string', 300)

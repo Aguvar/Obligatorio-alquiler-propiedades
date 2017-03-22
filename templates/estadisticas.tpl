@@ -42,18 +42,18 @@
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Ciudad:</label>
                                 <select id="pref-perpage" class="form-control" name="ciudad">
-                                    <option selected="selected" value="any">Cualquiera</option>
+                                    <option {if !isset($smarty.get.ciudad) || $smarty.get.ciudad == "any"}selected="selected"{/if} value="any">Cualquiera</option>
                                     {foreach from=$ciudades item=ciudad}
-                                        <option value="{$ciudad.id}">{$ciudad.nombre}</option>                                        
+                                        <option value="{$ciudad.id}" {if isset($smarty.get.ciudad) && $smarty.get.ciudad == $ciudad.id}selected="selected"{/if}>{$ciudad.nombre}</option>                                        
                                     {/foreach}
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Tipo de Operación:</label>
                                 <select id="pref-perpage" class="form-control" name="operacion">
-                                    <option selected="selected" value="any">Cualquiera</option>
-                                    <option value="V">Venta</option>
-                                    <option value="A">Alquiler</option>
+                                    <option {if !isset($smarty.get.operacion) || $smarty.get.operacion == "any"}selected="selected"{/if} value="any">Cualquiera</option>
+                                    <option {if isset($smarty.get.operacion) && $smarty.get.operacion == "V"}selected="selected"{/if}value="V">Venta</option>
+                                    <option {if isset($smarty.get.operacion) && $smarty.get.operacion == "A"}selected="selected"{/if}value="A">Alquiler</option>
 
                                 </select>                                
                             </div>
@@ -83,7 +83,7 @@
                             <td>{$barrio.casas}</td>
                             <td>{$barrio.promedio}</td>
                             <td>
-                                <a class="material-icons button edit" href="products.php?operacion=any&ciudad=any&barrio={$barrio.id}&tipo=any&habitaciones=&pMin=&pMax=&search=">Ir</i>
+                                <a class="material-icons button edit" href="products.php?operacion=any&ciudad=any&barrio={$barrio.id}&tipo=any&habitaciones=&pMin=&pMax=&search=yes">Ir</i>
                             </td>
                         </tr>
                     {/foreach}

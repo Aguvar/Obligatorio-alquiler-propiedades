@@ -47,20 +47,20 @@
                     <ul class="rslides" id="slider">
                         <li>
                             <div class="banner-text">
-                                <h3>Lorem Ipsum is   </h3>
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+                                <h3>Las mejores casas al mejor precio   </h3>
+                                <p>Nosotros nos aseguramos de que nuestras propiedades se encuentren mas baratas que la media, a traves de cualquier medio posible.</p>
                             </div>
                         </li>
                         <li>
                             <div class="banner-text">
-                                <h3>There are many  </h3>
-                                <p>Popular belief Contrary to , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+                                <h3>Houser es sinonimo de calidad   </h3>
+                                <p>Todas nuestras propiedades han sido inspeccionadas de arriba a abajo para evaluarlas segun nuestros estandares de calidad.</p>
                             </div>
                         </li>
                         <li>
                             <div class="banner-text">
-                                <h3>Sed ut perspiciatis</h3>
-                                <p>Lorem Ipsum is not simply random text. Contrary to popular belief, It has roots in a piece of classical Latin literature from 45 BC.</p>
+                                <h3>Proximamente: Doggy Houser</h3>
+                                <p>Ya que todos sabemos que el mejor amigo del hombre tambien precisa un lugar donde vivir.</p>
                             </div>
                         </li>
                     </ul>
@@ -121,7 +121,7 @@
                         <div class="clearfix"> </div>
                     </div>
                     <div class="content-top">
-                        <h1>NEW PRODUCTS</h1>
+                        <h1>RECIENTEMENTE AGREGADAS</h1>
                         <div class="grid-in">
                             <div class="col-md-3 grid-top simpleCart_shelfItem">
                                 <a href="single.php" class="b-link-stripe b-animate-go  thickbox">

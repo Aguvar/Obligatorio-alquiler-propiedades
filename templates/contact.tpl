@@ -31,7 +31,7 @@
         <!-- grow -->
         <div class="grow">
             <div class="container">
-                <h2>Contact</h2>
+                <h2>Contacto</h2>
             </div>
         </div>
         <!-- grow -->
