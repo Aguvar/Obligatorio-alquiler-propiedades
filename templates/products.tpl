@@ -103,7 +103,14 @@
                 </div>
             </div>
         </div>
-
+        {if !empty($casas)}
+            <div class="container">
+                <button class="btn btn-default filter-col button-back" id="botonPagAnt" value="-1">Anterior</button>
+                <input type="hidden" id="pagActual" value="0"><span class="pagActual">Pagina 1</span>
+                <input type="hidden" id="actualQuery" value="{$sqlQuery}">
+                <button class="btn btn-default filter-col button-next" id="botonPagSig" value="1">Siguiente</button>
+            </div>
+        {/if}          
         <div class="pro-du">
             <div class="container">
                 {if !empty($casas)}
@@ -115,17 +122,17 @@
                                     {if !empty($casas.$numCasa)}
                                         <div class="col-md-3 bottom-cd simpleCart_shelfItem">
                                             <div class="product-at ">
-                                                <a href="single.php?id={$casas.$numCasa.id}">
-                                                    <img class="img-responsive" src="images/{$casas.$numCasa.portada}" alt="">
+                                                <a href="single.php?id={$casas.$numCasa.id}" id="link1{$numCasa}">
+                                                    <img class="img-responsive" src="images/{$casas.$numCasa.portada}" id="portada{$numCasa}" alt="">
                                                     <div class="pro-grid">
                                                         <span class="buy-in">Buy Now</span>
                                                     </div>
                                                 </a>
                                             </div>
-                                            <p class="tun"><span>{$casas.$numCasa.titulo}</span><br>{$casas.$numCasa.barrio}</p>
+                                            <p class="tun" id="tituloBarrio{$numCasa}"><span>{$casas.$numCasa.titulo}</span><br>{$casas.$numCasa.barrio}</p>
                                             <div class="ca-rt">
-                                                <a href="single.php?id={$casas.$numCasa.id}" class="item_add">
-                                                    <p class="number item_price"><i> </i>${$casas.$numCasa.precio}</p>
+                                                <a href="single.php?id={$casas.$numCasa.id}" id="link2{$numCasa}" class="item_add">
+                                                    <p class="number item_price" id="precio{$numCasa}"><i> </i>${$casas.$numCasa.precio}</p>
                                                 </a>
                                             </div>
                                             <div class="clearfix"></div>
@@ -142,14 +149,6 @@
                 <div class="clearfix"></div>
             </div>
             <br>
-            {if !empty($casas)}
-                <div class="container">
-                    <button class="btn btn-default filter-col" id="botonPagAnt" value="-1">Anterior</button>
-                    <input type="hidden" id="pagActual" value="0"><span>Pagina 1</span>
-                    <input type="hidden" id="actualQuery" value="{$sqlQuery}">
-                    <button class="btn btn-default filter-col" id="botonPagSig" value="+1">Siguiente</button>
-                </div>
-            {/if}
         </div>
         <!-- products -->
         <!-- footer -->
