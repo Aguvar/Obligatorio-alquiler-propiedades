@@ -17,22 +17,55 @@ if (isset($_COOKIE["loggedUser"])) {
     $log = false;
 }
 
-//Obtener valores de busqueda por un GET
-if (isset($_GET["ciudad"]) && isset($_GET["operacion"])) {
-    
-}
-
 $mySmart->assign("log", $log);
 
 $conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 if ($conn->conectar()) {
-    
-    $sql = "SELECT nombres FROM ciudades";
-    
+
+    //Obtener valores de busqueda por un GET
+    if (isset($_GET["ciudad"]) && isset($_GET["operacion"])) {
+
+        switch ($_GET["ciudad"]) {
+            case "any":
+                $paramCiudad = '1';
+                break;
+            default:
+                $paramCiudad = "barrios.ciudad_id = '" . $_GET["ciudad"] . "'";
+                break;
+        }
+        switch ($_GET["operacion"]) {
+            case "A":
+                $paramOperacion = 'propiedades.operacion = "A"';
+                break;
+            case "V":
+                $paramOperacion = "propiedades.operacion = 'V'";
+                break;
+            default:
+                $paramOperacion = "1";
+                break;
+        }
+
+        $sql = 'SELECT COUNT(barrio_id) AS casas, barrios.nombre AS barrio, AVG(precio) / AVG(mts2) AS promedio, barrios.id FROM propiedades INNER JOIN barrios ON propiedades.barrio_id = barrios.id WHERE ' . $paramCiudad . ' AND ' . $paramOperacion . ' GROUP BY barrio_id';
+
+
+       /* $parametros = array(
+            array('idCiudad', $idCiudad, 'int', 0),
+            array('tipoOperacion', $tipoOperacion, 'string', 100)
+        );*/
+
+        if ($conn->consulta($sql)) {
+
+            $mySmart->assign("datos", $conn->restantesRegistros());
+        } else {
+            
+        }
+    }
+
+    $sql = "SELECT * FROM ciudades";
+
     if ($conn->consulta($sql)) {
-        
+
         $mySmart->assign("ciudades", $conn->restantesRegistros());
-        
     }
 }
 

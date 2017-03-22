@@ -43,9 +43,9 @@
                                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Ciudad:</label>
                                 <select id="pref-perpage" class="form-control" name="ciudad">
                                     <option selected="selected" value="any">Cualquiera</option>
-                                    <option value="Montevideo">Montevideo</option>
-                                    <option value="Ciudad de la costa">Ciudad de la Costa</option>
-                                    <option value="Punta del Este">Punta del Este</option>
+                                    {foreach from=$ciudades item=ciudad}
+                                        <option value="{$ciudad.id}">{$ciudad.nombre}</option>                                        
+                                    {/foreach}
                                 </select>                                
                             </div> 
                             <div class="form-group" id="filterForm">
@@ -67,25 +67,34 @@
                 </div>
             </div>    
         </div>
- 
+
         <div>
             <table>
                 <tr>
-                    <th>#</th>
                     <th>Barrio</th>
-                    <th>Precio</th>
-                    <th>Área</th>
-                    <th>Ver propiedad</th>
+                    <th>Numero de propiedades</th>
+                    <th>Precio/m<sup>2</sup> (<strong>$UYU/m<sup>2</sup></strong>) </th>
+                    <th>Buscar barrio</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Carrasco</td>
-                    <td>$1120000</td>
-                    <td>500 mts<sup>2</sup></td>
-                    <td>
-                        <a class="material-icons button edit">Ver propiedad</i>
-                    </td>
-                </tr>
+                {if isset($datos)}
+                    {foreach from=$datos item=barrio}
+                        <tr>
+                            <td>{$barrio.barrio}</td>
+                            <td>{$barrio.casas}</td>
+                            <td>{$barrio.promedio}</td>
+                            <td>
+                                <a class="material-icons button edit" href="products.php?operacion=any&ciudad=any&barrio={$barrio.id}&tipo=any&habitaciones=&pMin=&pMax=&search=">Ir</i>
+                            </td>
+                        </tr>
+                    {/foreach}
+                {else}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>   
+                {/if}
             </table>
         </div>
         <!--//content-->
