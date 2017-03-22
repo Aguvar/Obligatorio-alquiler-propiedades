@@ -70,27 +70,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <th>Opciones</th>
                     </tr>
                     {foreach from=$datosCasas item=casa}                        
-                    <tr>
-                        <td>{$casa.id}</td>
-                        <td>{if $casa.tipo == "C"}Casa{else}Apartamento{/if}</td>
-                        <td>{if $casa.operacion == "A"}Alquiler{else}Venta{/if}</td>
-                        <td>Montevideo</td>
-                        <td>Carrasco</td>
-                        <td>{if $casa.operacion == "A"}$UY{else}$USD{/if} {$casa.precio}</td>
-                        <td>{$casa.mts2} mts<sup>2</sup></td>
-                        <td>{$casa.habitaciones}</td>
-                        <td>{$casa.banios}</td>
-                        <td>{if $casa.garage == 1}Si{else}No{/if}</td>
-                        <td>
-                            <button class="button" onclick="location.href='formularioPropiedad.php?id={$casa.id}';" style="vertical-align:middle"><span>Editar </span>
-                            <button class="button" style="vertical-align:middle"><span>Eliminar </span>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{$casa.id}</td>
+                            <td>{if $casa.tipo == "C"}Casa{else}Apartamento{/if}</td>
+                            <td>{if $casa.operacion == "A"}Alquiler{else}Venta{/if}</td>
+                            <td>Montevideo</td>
+                            <td>Carrasco</td>
+                            <td>{if $casa.operacion == "A"}$UY{else}$USD{/if} {$casa.precio}</td>
+                            <td>{$casa.mts2} mts<sup>2</sup></td>
+                            <td>{$casa.habitaciones}</td>
+                            <td>{$casa.banios}</td>
+                            <td>{if $casa.garage == 1}Si{else}No{/if}</td>
+                            <td>
+                                <button class="button" onclick="location.href = 'formularioPropiedad.php?id={$casa.id}';" style="vertical-align:middle"><span>Editar </span></button>
+                                <button class="button" style="vertical-align:middle"><span>Eliminar </span></button>
+                            </td>
+                        </tr>
                     {/foreach}
                 </table>
             </div>
         </div>
-        
+
         <div id="Preguntas" class="tabcontent">
             <br>
             <div>
@@ -102,15 +102,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <th>Opciones</th>
                     </tr>
                     {foreach from=$preguntasSinResponder item=pregunta}
-                    <tr>
-                        <td>{$pregunta.id_propiedad}</td>
-                        <td>{$pregunta.fecha}</td>
-                        <td>{$pregunta.texto}</td>
-                        <td>
-                            <button class="button" onclick="location.href='single.php?id={$pregunta.id_propiedad}';" style="vertical-align:middle"><span>Ver propiedad </span>
-                            <br><button class="button" style="vertical-align:middle"><span>Responder </span>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{$pregunta.id_propiedad}</td>
+                            <td>{$pregunta.fecha}</td>
+                            <td>{$pregunta.texto}</td>
+                            <td>
+                                <button class="button" onclick="location.href = 'single.php?id={$pregunta.id_propiedad}';" style="vertical-align:middle"><span>Ver propiedad </span></button>
+                                <br><button class="button" onclick="location.href = 'respuestaPregunta.php?id={$pregunta.id}';" style="vertical-align:middle"><span>Responder </span></button>
+                            </td>
+                        </tr>
                     {/foreach}
                 </table>
             </div>

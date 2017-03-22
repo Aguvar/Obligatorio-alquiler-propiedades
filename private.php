@@ -13,27 +13,23 @@ if (!isset($_COOKIE["loggedUser"])) {
 
 if ($conn) {
     $conn->conectar();
-    
+
     //Consultar por las casas sin un orden especifico
     $sql = "SELECT id, operacion, barrio_id, precio, titulo, mts2, habitaciones, banios, garage, tipo FROM propiedades WHERE eliminado = 0 LIMIT 0,100";
-    
+
     if ($conn->consulta($sql)) {
-        
+
         $datosCasas = $conn->restantesRegistros();
-        
     } else {
-        echo 'error de consulta';    
+        echo 'error de consulta';
     }
-    
-    $sql = "SELECT id_propiedad, fecha, texto, respuesta, fecha_respuesta FROM preguntas WHERE respuesta IS NULL";
-    
+
+    $sql = "SELECT id, id_propiedad, fecha, texto, respuesta, fecha_respuesta FROM preguntas WHERE respuesta IS NULL";
+
     if ($conn->consulta($sql)) {
-        
+
         $preguntasSinResponder = $conn->restantesRegistros();
-        
     }
-    
-    
 } else {
     echo 'ERROR DE SERVIDOR';
     die();
@@ -58,6 +54,5 @@ $privateSmarty->assign("preguntasSinResponder", $preguntasSinResponder);
 $privateSmarty->assign("log", $log);
 
 $privateSmarty->display("private.tpl");
-
 ?>
 
