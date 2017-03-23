@@ -9,21 +9,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <head>
         <title>Mattress A Ecommerce Category Flat Bootstrap Responsive Website Template | single :: w3layouts</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
-        <!-- Custom Theme files -->
-        <!--theme-style-->
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-        <!--//theme-style-->
+        <link href="css/dataTablesBootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
               Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-        <!--fonts-->
         <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
-        <!-- start menu -->
         <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="js/memenu.js"></script>
         {literal}
@@ -125,14 +120,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                                
+
                     <div class="col-md-12 contact-in">
                         <div class="address-more">
                             <h4>Preguntas acerca de la propiedad</h4>	                           
                             <br>
-                            <p>Es a prueba de balas? <h5>Respuesta:</h5> Se</p> <br>
-                            <p>Ke pasa si la quemo? <h5>Respuesta:</h5> Se quema</p> <br>
-                            <p>Hola te ofrezco $1500 es todo lo que tengo, saludos. <h5>Respuesta:</h5> El precio es U$S 150.000</p>
+                            {foreach from=$preguntas item=pregunta}
+                                <p>{$pregunta.texto} <h5>Respuesta:</h5>{$pregunta.respuesta}</p> <br>
+                            {/foreach}
                         </div>
                         <form action="procesoPregunta.php" method="POST">
                             <a href="#" class="add-cart item_add">PREGUNTAR</a>
@@ -141,8 +136,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <input type="hidden" name="idCasa" value="{$idCasa}">
                         </form>
                     </div>
-
-
                     <div class="clearfix"> </div>
                     <div class=" bottom-product">
                         <div class="col-md-4 bottom-cd simpleCart_shelfItem">

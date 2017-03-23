@@ -22,6 +22,9 @@ if (isset($_COOKIE["loggedUser"])) {
 $mySmart->assign("log", $log);
 
 
+
+
+
 $conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 
 if ($conn) {
@@ -54,7 +57,9 @@ if ($conn) {
 
     $mySmart->assign("promedioCasa", (int)$promedioCasa);
 
-    $sql = "SELECT AVG(precio)/AVG(mts2) AS promedio FROM `propiedades` WHERE precio != 0 AND barrio_id = :idBarrio";
+    $sql = "SELECT AVG(precio)/AVG(mts2) AS promedio FROM `propiedades` WHERE precio != 0 AND barrio_id = :idBarrio";    
+    
+    $sqlPreguntas = "SELECT texto, respuesta FROM preguntas WHERE id_propiedad = " . $idCasa . " AND respuesta IS NOT NULL";
 
     $parametros = array(
         array('idBarrio', (int)$barrio, 'int', 0)
@@ -66,6 +71,16 @@ if ($conn) {
         
         $mySmart->assign("promedioBarrio", (int)$promedioBarrio);
         
+        
+    } else {
+        echo 'consulta not ok';
+    }
+    
+     if ($conn->consulta($sqlPreguntas)) {
+    
+        $preguntas = $conn->restantesRegistros();
+        
+        $mySmart->assign("preguntas", $preguntas);
         
     } else {
         echo 'consulta not ok';

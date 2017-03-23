@@ -9,6 +9,7 @@ $idCasa = $_GET['id'];
 $conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 
 if ($conn) {
+
     $conn->conectar();
 
     $sql = 'SELECT *
@@ -28,37 +29,15 @@ if ($conn) {
 
     class PDF extends FPDF {
 
-// Page header
         function Header() {
-            // Logo
-            //$this->Image('logo.png', 10, 6, 30);
-            // Arial bold 15
-            $this->SetFont('Arial', 'B', 20);
-            // Move to the right
+            $this->SetFont('Arial', 'B', 15);
             $this->Cell(80);
-            // Title
             $this->Cell(30, 10, $infoCasa["titulo"], 1, 0, 'C');
-            // Line break
             $this->Ln(20);
         }
 
         function Imagenes() {
             
-        }
-
-        function Descripcion() {
-            $this->MultiCell(0, 5, $infoCasa["texto"]);
-            $this->Ln(20);
-        }
-
-        function FichaTecnica() {
-            $this->MultiCell(0, 5, 'Ubicacion: '); // . $infoCasa["nombre"]);
-            $this->MultiCell(0, 5, 'Número de habitaciones: ' . $infoCasa["habitaciones"]);
-            $this->MultiCell(0, 5, 'Número de baños: ' . $infoCasa["banios"]);
-            $this->MultiCell(0, 5, 'Precio por metro cuadrado de propiedades en el mismo barrio: ');
-            $this->MultiCell(0, 5, 'Esta casa es mas barata que propiedades similares en el mismo barrio o no, falta magia if ' . $infoCasa["nombre"]);
-            $this->Ln(20);
-            $this->Ln(20);
         }
 
         function Preguntas() {
@@ -68,46 +47,36 @@ if ($conn) {
 
     }
 
-// Page footer
-    /* function Footer() {
-      // Position at 1.5 cm from bottom
-      $this->SetY(-15);
-      // Arial italic 8
-      $this->SetFont('Arial', 'I', 8);
-      // Page number
-      $this->Cell(0, 10, 'Page ' . $this->PageNo() . '/{nb}', 0, 0, 'C');
-      } */
+    $fichaTecnica = "\n\n\n\nFICHA TECNICA: \n\nUbicacion: " . $infoCasa["numbre"];
+    $fichaTecnica .= ("\nNumero de habitaciones: " . $infoCasa["habitaciones"]);
+    $fichaTecnica .= ("\nNumero de baños: " . $infoCasa["banios"]);
+    $fichaTecnica .= ("\nPrecio por metro cuadrado de propiedades en el mismo barrio: " . "mucho");
+    $fichaTecnica .= ("\nEsta casa (es o no es) mas barata que propiedades similares en el mismo barrio.");
+    setlocale(LC_CTYPE, 'en_US');
+    $fichaTecnica = iconv('UTF-8', 'ASCII//TRANSLIT', $fichaTecnica);
 
+    $preguntasHechas = "\n\n\n\nPREGUNTAS REALIZADAS ACERCA DE LA PROPIEDAD: \n";
+    for ($i = 1; $i <= 3; $i++) {
+        $preguntasHechas .= "\nLa casa tiene " . $i . "  pisos?";
+        $preguntasHechas .= "\nRESPUESTA:";
+        $preguntasHechas .= "\nNo, tiene " . ($i + 1) . ".\n\n";
+    }
+    setlocale(LC_CTYPE, 'en_US');
+    $preguntasHechas = iconv('UTF-8', 'ASCII//TRANSLIT', $preguntasHechas);
 
-
-    /* print_r($infoCasa["titulo"]);
-
-      print_r($infoCasa["texto"]);
-
-      print_r($infoCasa["nombre"]);
-
-      print_r($infoCasa["habitaciones"]);
-
-      print_r($infoCasa["banios"]);
-
-      print_r($infoCasa); */
-
-
-// Instanciation of inherited class
-
-    $pdf = new FPDF();   
+    $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial', 'B', 16);
-    $pdf->Cell(40, 10, $infoCasa["titulo"]);
-    $pdf->Cell(60,10,'Powered by FPDF.',0,1,'C');
+    $pdf->MultiCell(190, 15, $infoCasa["titulo"], 1, C);
+    $pdf->Ln();
+    // $pdf->Image('/images/cart.png');
+    $pdf->Ln();
+    $pdf->Ln();
+    $pdf->SetFont('Times', 'B', 12);
+    $pdf->Write(7, $infoCasa["texto"]);
+    $pdf->SetFont('Courier', 'B', 12);
+    $pdf->Write(5, $fichaTecnica);
+    $pdf->SetFont('Times', 'B', 12);
+    $pdf->Write(5, $preguntasHechas);
     $pdf->Output();
-
-    /* $pdf = new PDF();
-      $pdf->AddPage();
-      $pdf->SetFont('Times', '', 12);
-      $pdf->Imagenes();
-      $pdf->Descripcion();
-      $pdf->FichaTecnica();
-      $pdf->Preguntas();
-      $pdf->Output(); */
 }  
