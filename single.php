@@ -59,7 +59,7 @@ if ($conn) {
 
     $sql = "SELECT AVG(precio)/AVG(mts2) AS promedio FROM `propiedades` WHERE precio != 0 AND barrio_id = :idBarrio";    
     
-    $preguntas = "SELECT texto, respuesta FROM preguntas WHERE id_propiedad IS $idCasa AND respuesta IS NOT null";
+    $sqlPreguntas = "SELECT texto, respuesta FROM preguntas WHERE id_propiedad = " . $idCasa . " AND respuesta IS NOT NULL";
 
     $parametros = array(
         array('idBarrio', (int)$barrio, 'int', 0)
@@ -75,12 +75,21 @@ if ($conn) {
     } else {
         echo 'consulta not ok';
     }
+    
+     if ($conn->consulta($sqlPreguntas)) {
+    
+        $preguntas = $conn->restantesRegistros();
+        
+        $mySmart->assign("preguntas", $preguntas);
+        
+    } else {
+        echo 'consulta not ok';
+    }
 } else {
     echo 'Not ok';
 }
 
 $mySmart->assign("idCasa", $idCasa);
-$mySmart->assign("preguntas", $preguntas);
 
 $mySmart->display('templates/single.tpl');
 ?>

@@ -3,12 +3,8 @@
     require_once './config.php';
     require_once './include/class.Conexion.BD.php';
     
-    echo $_POST["idCasa"];
-    echo $_POST["txtPregunta"];
-    
     $idCasa = $_POST["idCasa"];
     $pregunta = $_POST["txtPregunta"];
-    //$timestamp = time();
     
     $conn = new ConexionBD("mysql", SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
     
@@ -24,7 +20,7 @@
     );
     
     if ($conn->consulta($sql, $parametros)) {
-        header("Location: index.php");
+        header("Location: single.php?id=".$idCasa);
     } else {
         echo 'error';
     }
