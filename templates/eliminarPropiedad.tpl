@@ -35,20 +35,16 @@
                 <div class="container">
                     <div class="contact-form">
                         <div class="col-md-8 contact-grid">
-                            <form name="propiedad" action="#" method="post">
-                                {literal}
-                                    <select name="tipoPropiedad" class="formPropiedad" form="propiedad">
-                                        <option value="default">Seleccione el motivo:</option>
-                                        <option value="Casa">Ya se alquiló o vendió</option>
-                                        <option value="Apartamento"> El dueño se arrepintió</option>
-                                        <option value="Apartamento"> Otro motivo</option>    
-                                    </select>
-                                    <textarea cols="77" rows="6" value="Descripcion" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                                this.value = 'Descripción de la propiedad';
-                                            }">Message</textarea>
-                                {/literal}
+                            <form name="propiedad" action="procesoEliminar.php" method="POST">
+                                <h4>Seleccione el motivo:</h4>
+                                <select name="motivo" class="formPropiedad">
+                                    <option selected="selected" value="1">Ya se alquiló o vendió</option>
+                                    <option value="2"> El dueño se arrepintió</option>
+                                    <option value="3"> Otro motivo</option>    
+                                </select>
                                 <div class="send">
-                                    <input type="submit" value="Send">
+                                    <input type="hidden" value="{$smarty.get.id}" name="id">
+                                    <input type="submit" value="Eliminar">
                                 </div>
                             </form>
                         </div>                        

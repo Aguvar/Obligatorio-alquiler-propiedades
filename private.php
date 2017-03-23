@@ -24,7 +24,7 @@ if ($conn) {
         echo 'error de consulta';
     }
 
-    $sql = "SELECT id, id_propiedad, fecha, texto, respuesta, fecha_respuesta FROM preguntas WHERE respuesta IS NULL";
+    $sql = "SELECT id, id_propiedad, fecha, texto, respuesta FROM preguntas WHERE respuesta IS NULL";
 
     if ($conn->consulta($sql)) {
 

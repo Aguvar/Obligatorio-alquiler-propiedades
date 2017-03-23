@@ -83,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <td>{if $casa.garage == 1}Si{else}No{/if}</td>
                             <td>
                                 <button class="button" onclick="location.href = 'formularioPropiedad.php?id={$casa.id}';" style="vertical-align:middle"><span>Editar </span></button>
-                                <button class="button" style="vertical-align:middle"><span>Eliminar </span></button>
+                                <button class="button" onclick="location.href = 'eliminarPropiedad.php?id={$casa.id}';" style="vertical-align:middle"><span>Eliminar </span></button>
                             </td>
                         </tr>
                     {/foreach}
@@ -108,7 +108,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <td>{$pregunta.texto}</td>
                             <td>
                                 <button class="button" onclick="location.href = 'single.php?id={$pregunta.id_propiedad}';" style="vertical-align:middle"><span>Ver propiedad </span></button>
-                                <br><button class="button" onclick="location.href = 'respuestaPregunta.php?id={$pregunta.id}';" style="vertical-align:middle"><span>Responder </span></button>
+                                <br><button class="button" onclick="location.href = 'respuestaPregunta.php?id={$pregunta.id}&texto={$pregunta.texto}';" style="vertical-align:middle"><span>Responder </span></button>
                             </td>
                         </tr>
                     {/foreach}

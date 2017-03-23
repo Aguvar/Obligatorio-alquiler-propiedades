@@ -33,16 +33,15 @@
             <!--content-->
             <div class="contact">
                 <div class="container">
+                    <h2>Pregunta: {$texto}</h2>
                     <div class="contact-form">
                         <div class="col-md-8 contact-grid">
-                            <form name="propiedad" action="#" method="post">
+                            <form name="pregunta" action="responderPregunta.php" method="POST">
                                 {literal}
-                                    Pregunta: njdsanldawnlnnldjd, saludos Jaime.
-                                    <textarea cols="77" rows="6" value="Descripcion" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                                this.value = 'Descripción de la propiedad';
-                                            }">Message</textarea>
+                                    <textarea cols="77" rows="6" name="respuesta" placeholder="Respuesta"></textarea>
                                 {/literal}
                                 <div class="send">
+                                    <input type="hidden" value="{$id}" name="id">
                                     <input type="submit" value="Send">
                                 </div>
                             </form>

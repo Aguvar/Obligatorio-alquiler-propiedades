@@ -14,10 +14,4 @@ if (isset($_COOKIE["loggedUser"])) {
 
 $mySmart->assign("log", $log);
 
-$id = $_GET["id"];
-$texto = $_GET["texto"];
-
-$mySmart->assign("id", $id);
-$mySmart->assign("texto", $texto);
-
-$mySmart->display("respuestaPregunta.tpl");
+$mySmart->display("eliminarPropiedad.tpl");
