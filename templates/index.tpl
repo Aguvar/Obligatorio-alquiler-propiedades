@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MercadoLibre pero para tu kasa</title>
+        <title>Houser</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery.min.js"></script>
@@ -72,9 +72,9 @@
             <div class="cont">
                 <div class="content">
                     <div class="content-top-bottom">
-                        <h2>Apartamentos destacados</h2>
+                        <h2>Propiedades destacadas</h2>
                         <div class="col-md-6 men">
-                            <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                            <a href="single.php?id=13" class="b-link-stripe b-animate-go  thickbox">
                                 <img class="img-responsive" src="images/t1.jpg" alt="">
                                 <div class="b-wrapper">
                                     <h3 class="b-animate b-from-top top-in   b-delay03 ">
@@ -85,7 +85,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="col-md1 ">
-                                <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                <a href="single.php?id=9" class="b-link-stripe b-animate-go  thickbox">
                                     <img class="img-responsive" src="images/t2.jpg" alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-top top-in1   b-delay03 ">
@@ -96,7 +96,7 @@
                             </div>
                             <div class="col-md2">
                                 <div class="col-md-6 men1">
-                                    <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                    <a href="single.php?id=2" class="b-link-stripe b-animate-go  thickbox">
                                         <img class="img-responsive" src="images/t3.jpg" alt="">
                                         <div class="b-wrapper">
                                             <h3 class="b-animate b-from-top top-in2   b-delay03 ">
@@ -106,7 +106,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-6 men2">
-                                    <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                    <a href="single.php?id=14" class="b-link-stripe b-animate-go  thickbox">
                                         <img class="img-responsive" src="images/t4.jpg" alt="">
                                         <div class="b-wrapper">
                                             <h3 class="b-animate b-from-top top-in2   b-delay03 ">
@@ -124,7 +124,7 @@
                         <h1>RECIENTEMENTE AGREGADAS</h1>
                         <div class="grid-in">
                             <div class="col-md-3 grid-top simpleCart_shelfItem">
-                                <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                <a href="single.php?id=81" class="b-link-stripe b-animate-go  thickbox">
                                     <img class="img-responsive" src="images/pi.jpg" alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-left    b-delay03 ">
@@ -132,13 +132,13 @@
                                         </h3>
                                     </div>
                                 </a>
-                                <p><a href="single.php">TRIBECA LIVING</a></p>
-                                <a href="#" class="item_add">
+                                <p><a href="single.php?id=81">TRIBECA LIVING</a></p>
+                                <a href="single.php?id=81" class="item_add">
                                     <p class="number item_price"><i> </i>$500.00</p>
                                 </a>
                             </div>
                             <div class="col-md-3 grid-top simpleCart_shelfItem">
-                                <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                <a href="single.php?id=16" class="b-link-stripe b-animate-go  thickbox">
                                     <img class="img-responsive" src="images/pi1.jpg" alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-left    b-delay03 ">
@@ -146,13 +146,13 @@
                                         </h3>
                                     </div>
                                 </a>
-                                <p><a href="single.php">ESSENTIAL</a></p>
-                                <a href="#" class="item_add">
+                                <p><a href="single.php?id=16">ESSENTIAL</a></p>
+                                <a href="single.php?id=16" class="item_add">
                                     <p class="number item_price"><i> </i>$500.00</p>
                                 </a>
                             </div>
                             <div class="col-md-3 grid-top simpleCart_shelfItem">
-                                <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                <a href="single.php?id=24" class="b-link-stripe b-animate-go  thickbox">
                                     <img class="img-responsive" src="images/pi2.jpg" alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-left    b-delay03 ">
@@ -160,13 +160,13 @@
                                         </h3>
                                     </div>
                                 </a>
-                                <p><a href="single.php">CLARISSA</a></p>
-                                <a href="#" class="item_add">
+                                <p><a href="single.php?id=24">CLARISSA</a></p>
+                                <a href="single.php?id=24" class="item_add">
                                     <p class="number item_price"><i> </i>$500.00</p>
                                 </a>
                             </div>
                             <div class="col-md-3 grid-top">
-                                <a href="single.php" class="b-link-stripe b-animate-go  thickbox">
+                                <a href="single.php?id=13" class="b-link-stripe b-animate-go  thickbox">
                                     <img class="img-responsive" src="images/pi4.jpg" alt="">
                                     <div class="b-wrapper">
                                         <h3 class="b-animate b-from-left    b-delay03 ">
@@ -174,8 +174,8 @@
                                         </h3>
                                     </div>
                                 </a>
-                                <p><a href="single.php">LITTLE HOME</a></p>
-                                <a href="#" class="item_add">
+                                <p><a href="single.php?id=13">LITTLE HOME</a></p>
+                                <a href="single.php?id=13" class="item_add">
                                     <p class="number item_price"><i> </i>$500.00</p>
                                 </a>
                             </div>

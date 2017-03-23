@@ -5,6 +5,8 @@ require_once 'config.php';
 require_once './include/fpdf/fpdf.php';
 
 $idCasa = $_GET['id'];
+$promedioBarrio = $_GET['promedioBarrio'];
+$promedioCasa = $_GET['promedioCasa'];
 
 $conn = new ConexionBD('mysql', SERVER, BD_INMOBILIARIA, USUARIO_BD, CLAVE_BD);
 
@@ -27,6 +29,13 @@ if ($conn) {
         echo 'consulta not ok';
     }
 
+    $sqlPreguntas = "SELECT texto, respuesta FROM preguntas WHERE id_propiedad = " . $idCasa . " AND respuesta IS NOT NULL";
+
+    if ($conn->consulta($sqlPreguntas)) {
+
+        $preguntas = $conn->restantesRegistros();
+    }
+
     class PDF extends FPDF {
 
         function Header() {
@@ -47,19 +56,21 @@ if ($conn) {
 
     }
 
-    $fichaTecnica = "\n\n\n\nFICHA TECNICA: \n\nUbicacion: " . $infoCasa["numbre"];
+    $fichaTecnica = "\n\n\n\nFICHA TECNICA: \n\nUbicacion: " . $infoCasa["nombre"];
     $fichaTecnica .= ("\nNumero de habitaciones: " . $infoCasa["habitaciones"]);
     $fichaTecnica .= ("\nNumero de baños: " . $infoCasa["banios"]);
-    $fichaTecnica .= ("\nPrecio por metro cuadrado de propiedades en el mismo barrio: " . "mucho");
-    $fichaTecnica .= ("\nEsta casa (es o no es) mas barata que propiedades similares en el mismo barrio.");
-    setlocale(LC_CTYPE, 'en_US');
-    $fichaTecnica = iconv('UTF-8', 'ASCII//TRANSLIT', $fichaTecnica);
+    $fichaTecnica .= ("\nPrecio por metro cuadrado de propiedades en el mismo barrio: " . $promedioBarrio);
+    if ($promedioBarrio < $promedioCasa) {
+        $fichaTecnica .= ("\nEsta casa es mas cara que propiedades similares en el mismo barrio.");
+    } else {
+        $fichaTecnica .= ("\nEsta casa es mas barata que propiedades similares en el mismo barrio.");
+    }
 
-    $preguntasHechas = "\n\n\n\nPREGUNTAS REALIZADAS ACERCA DE LA PROPIEDAD: \n";
-    for ($i = 1; $i <= 3; $i++) {
-        $preguntasHechas .= "\nLa casa tiene " . $i . "  pisos?";
-        $preguntasHechas .= "\nRESPUESTA:";
-        $preguntasHechas .= "\nNo, tiene " . ($i + 1) . ".\n\n";
+    $preguntasHechas = "\n\n\n\nPREGUNTAS REALIZADAS ACERCA DE LA PROPIEDAD: \n\n";
+    foreach ($preguntas as $pregunta) {
+        $preguntasHechas .= $pregunta["texto"];
+        $preguntasHechas .= "\nRESPUESTA: ";
+        $preguntasHechas .= $pregunta["respuesta"]."\n\n";
     }
     setlocale(LC_CTYPE, 'en_US');
     $preguntasHechas = iconv('UTF-8', 'ASCII//TRANSLIT', $preguntasHechas);
@@ -67,16 +78,16 @@ if ($conn) {
     $pdf = new FPDF();
     $pdf->AddPage();
     $pdf->SetFont('Arial', 'B', 16);
-    $pdf->MultiCell(190, 15, $infoCasa["titulo"], 1, C);
+    $pdf->MultiCell(190, 15, utf8_decode($infoCasa["titulo"]), 1, "C");
     $pdf->Ln();
     // $pdf->Image('/images/cart.png');
     $pdf->Ln();
     $pdf->Ln();
     $pdf->SetFont('Times', 'B', 12);
-    $pdf->Write(7, $infoCasa["texto"]);
+    $pdf->Write(7, utf8_decode($infoCasa["texto"]));
     $pdf->SetFont('Courier', 'B', 12);
-    $pdf->Write(5, $fichaTecnica);
+    $pdf->Write(5, utf8_decode($fichaTecnica));
     $pdf->SetFont('Times', 'B', 12);
-    $pdf->Write(5, $preguntasHechas);
+    $pdf->Write(5, utf8_decode($preguntasHechas));
     $pdf->Output();
 }  

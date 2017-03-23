@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mattress A Ecommerce Category Flat Bootstrap Responsive Website Template | single :: w3layouts</title>
+        <title>Houser - Informacion de la propiedad</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <script src="js/jquery.min.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
@@ -94,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <div class="star-on">
 
                                     <div class="review">
-                                        <a href="#"> 1 customer review </a>
+                                        
 
                                     </div>
                                     <div class="clearfix"> </div>
@@ -114,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         Esta casa es mas cara que propiedades similares en el mismo barrio.
                                     {/if}
                                 </p>
-                                <a href="exportPDF.php?id={$idCasa}" class="add-cart item_add">EXPORTAR A PDF</a>
+                                <a href="exportPDF.php?id={$idCasa}&promedioBarrio={$promedioBarrio}&promedioCasa={$promedioCasa}" class="add-cart item_add">EXPORTAR A PDF</a>
 
                             </div>
                         </div>
@@ -137,7 +137,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </form>
                     </div>
                     <div class="clearfix"> </div>
-                    <div class=" bottom-product">
+                    {*<div class=" bottom-product">
                         <div class="col-md-4 bottom-cd simpleCart_shelfItem">
                             <div class="product-at ">
                                 <a href="#"><img class="img-responsive" src="images/pi3.jpg" alt="">
@@ -176,7 +176,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
                             </div>					</div>
                         <div class="clearfix"> </div>
-                    </div>
+                    </div>*}
                 </div>
 
                 <div class="clearfix"> </div>

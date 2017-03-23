@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Información de la propiedad</title>
+        <title>Houser - Modificar propiedad</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <script src="js/jquery.min.js"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -26,7 +26,7 @@
             <!-- grow -->
             <div class="grow">
                 <div class="container">
-                    <h2>Aca va el nombre de la propiedad</h2>
+                    <h2>Modificar propiedad</h2>
                 </div>
             </div>
             <!-- grow -->

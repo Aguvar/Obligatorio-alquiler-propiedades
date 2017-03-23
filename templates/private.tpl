@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Panel de control</title>
+        <title>Houser - Panel de control</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <script src="js/jquery.min.js"></script>
         <script src="js/private.js"></script>
